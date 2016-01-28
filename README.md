@@ -1,4 +1,6 @@
 #Radio STAR
+
+[![Join the chat at https://gitter.im/jdifuria/radioSTAR](https://badges.gitter.im/jdifuria/radioSTAR.svg)](https://gitter.im/jdifuria/radioSTAR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ChicoState/radioSTAR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![HitCount](https://hitt.herokuapp.com/ChicoState/radioSTAR.svg)](https://github.com/ChicoState/radioSTAR)  
 **_Radio Statistical Tracking and Automated Review_** is an accountability program for radio stations and their DJs.  radioStar is a web application that builds profiles for each DJ at a specific Radio Station, giving them a compliance rating, artist metrics, listener counts, and general feedback about the status of their show. When a DJ is out of compliance, it will affect their compliance rating and an e-mail will be automatically sent to the appropriate manager(s) at a station to notify them of the compliance breach. We will be creating AI to do all of these actions efficiently in real time.
