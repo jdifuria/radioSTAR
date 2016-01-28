@@ -7,7 +7,7 @@
 Currently, radioSTAR is being developed to work with KCSC Radio at CSU, Chico. Plans beyond that will be announced at a later time.  
 
 Languages: [HTML](https://en.wikipedia.org/wiki/HTML) [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) [Javascript](https://en.wikipedia.org/wiki/JavaScript)  
-Server: [Node.js](https://www.rubyonrails.org/)  
+Server: [Rails](https://www.rubyonrails.org/)  
 Radio Station: [KCSC Radio](http://kcscradio.com/)  
 
 
