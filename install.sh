@@ -1,3 +1,4 @@
+#!/bin/bash/
 #Log of commands used to set-up the basic radiostar back-end
 rails new radioStar
 cd radioStar
