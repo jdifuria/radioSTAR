@@ -34,6 +34,7 @@ cd radioStar
  rails generate scaffold UserShow show_id:integer user_id:integer
  rails generate scaffold Playlist show_id:integer chart_id:integer playlist_id:integer date:datetime
  rails generate scaffold Chart name:string country:string source_url:string date:datetime
+ rails generate scaffold Song playlist_id:integer title:string artist:string album:string label:string genre:string time:datetime
 
 #################################
 #### End Scaffold Generation ####
