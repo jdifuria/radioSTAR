@@ -30,6 +30,8 @@ cd radioStar
  rails generate devise:install
  rails generate devise user name:string user_id:integer compliance:float
  rails generate devise:views
+ rails generate scaffold Show show_id:integer name:string timeslot:string
+ rails generate scaffold UserShow show_id:integer user_id:integer
 #################################
 #### End Scaffold Generation ####
 #################################
