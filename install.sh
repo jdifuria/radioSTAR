@@ -28,7 +28,8 @@ cd radioStar
 #### Rails Scaffold Generation ##
 #################################
  rails generate devise:install
-
+ rails generate devise user name:string user_id:integer compliance:float
+ rails generate devise:views
 #################################
 #### End Scaffold Generation ####
 #################################
