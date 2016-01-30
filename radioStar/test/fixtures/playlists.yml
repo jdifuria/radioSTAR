@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  show_id: 1
+  chart_id: 1
+  playlist_id: 1
+  date: 2016-01-30 10:47:10
+
+two:
+  show_id: 1
+  chart_id: 1
+  playlist_id: 1
+  date: 2016-01-30 10:47:10

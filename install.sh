@@ -32,6 +32,9 @@ cd radioStar
  rails generate devise:views
  rails generate scaffold Show show_id:integer name:string timeslot:string
  rails generate scaffold UserShow show_id:integer user_id:integer
+ rails generate scaffold Playlist show_id:integer chart_id:integer playlist_id:integer date:datetime
+ rails generate scaffold Chart name:string country:string source_url:string date:datetime
+
 #################################
 #### End Scaffold Generation ####
 #################################

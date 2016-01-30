@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :charts
+  resources :playlists
   resources :user_shows
   resources :shows
   devise_for :users

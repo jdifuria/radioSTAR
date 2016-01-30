@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @chart.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @chart.country %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @chart.source_url %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @chart.date %>
+</p>
+
+<%= link_to 'Edit', edit_chart_path(@chart) %> |
+<%= link_to 'Back', charts_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Show:</strong>
+  <%= @playlist.show_id %>
+</p>
+
+<p>
+  <strong>Chart:</strong>
+  <%= @playlist.chart_id %>
+</p>
+
+<p>
+  <strong>Playlist:</strong>
+  <%= @playlist.playlist_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @playlist.date %>
+</p>
+
+<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
+<%= link_to 'Back', playlists_path %>
