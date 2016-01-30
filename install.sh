@@ -1,0 +1,25 @@
+#Log of commands used to set-up the basic radiostar back-end
+rails new radioStar
+cd radioStar
+
+#################################
+#### Update Gem File ############
+#################################
+  #Add gems to Gemfile
+  echo "################################" >> Gemfile
+  echo "## Custom Gems Below ###########" >> Gemfile
+  echo "################################" >> Gemfile
+  echo "gem 'devise'" >> Gemfile
+  echo "gem 'quiet_assets', group: :development" >> Gemfile
+  echo "gem 'better_errors', group: :development" >> Gemfile
+  echo "gem 'binding_of_caller', group: :development" >> Gemfile
+  # echo "gem 'ember-rails'" >> Gemfile
+  # echo "gem 'ember-source', '~> 1.9.0'" >> Gemfile
+  echo "################################" >> Gemfile
+  echo "## Custom Gems End #############" >> Gemfile
+  echo "################################" >> Gemfile
+  #Install all gems
+  bundle install
+#################################
+#### End Gem File Update ########
+#################################
