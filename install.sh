@@ -43,3 +43,45 @@ cd radioStar
 #################################
 #### End Scaffold Generation ####
 #################################
+
+#################################
+#### Change Devise File #########
+#################################
+  #changes password required length to 1 for testing purposes
+  sed -i '145s/.*/  config.password_length = 1..128/' config/initializers/devise.rb
+  
+  # Devise Confirmation add div container
+  sed -i '1i\<div class="container">' app/views/devise/confirmations/new.html.erb
+  sed -i "\$a</div>" app/views/devise/confirmations/new.html.erb
+  
+  # Devise Mailer add div container
+  sed -i '1i\<div class="container">' app/views/devise/mailer/unlock_instructions.html.erb
+  sed -i "\$a</div>" app/views/devise/mailer/unlock_instructions.html.erb
+  sed -i '1i\<div class="container">' app/views/devise/mailer/reset_password_instructions.html.erb
+  sed -i "\$a</div>" app/views/devise/mailer/reset_password_instructions.html.erb
+  sed -i '1i\<div class="container">' app/views/devise/mailer/confirmation_instructions.html.erb
+  sed -i "\$a</div>" app/views/devise/mailer/confirmation_instructions.html.erb
+  
+  # Devise Passwords add div container
+  sed -i '1i\<div class="container">' app/views/devise/passwords/new.html.erb
+  sed -i "\$a</div>" app/views/devise/passwords/new.html.erb
+  sed -i '1i\<div class="container">' app/views/devise/passwords/edit.html.erb
+  sed -i "\$a</div>" app/views/devise/passwords/edit.html.erb
+  
+  # Devise Registrations add div container
+  sed -i '1i\<div class="container">' app/views/devise/registrations/new.html.erb
+  sed -i "\$a</div>" app/views/devise/registrations/new.html.erb
+  sed -i '1i\<div class="container">' app/views/devise/registrations/edit.html.erb
+  sed -i "\$a</div>" app/views/devise/registrations/edit.html.erb
+  
+  # Devise sessions add div container
+  sed -i '1i\<div class="container">' app/views/devise/sessions/new.html.erb
+  sed -i "\$a</div>" app/views/devise/sessions/new.html.erb
+  
+  # Devise sessions add div container
+  sed -i '1i\<div class="container">' app/views/devise/unlocks/new.html.erb
+  sed -i "\$a</div>" app/views/devise/unlocks/new.html.erb
+#################################
+#### End Devise File Updates ####
+#################################
+
