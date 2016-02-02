@@ -38,6 +38,7 @@ cd radioStar
  rails generate scaffold Song playlist_id:integer title:string artist:string album:string label:string genre:string time:datetime
  #Potential Features for later development below #
  rails generate scaffold Schedule show_id:integer time:int day:int primary_key:string
+ rails g controller Profile index
  #Features End #
 #################################
 #### End Scaffold Generation ####
