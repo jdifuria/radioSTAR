@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+load "#{Rails.root}/db/words.rb"
 
 users = User.create(
   [
@@ -86,7 +87,7 @@ userShows = UserShow.create(
   ]
 )
 
-chart = Chart.create(
+charts = Chart.create(
   [
     {name:'chart1' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
     {name:'chart2' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
@@ -100,7 +101,7 @@ chart = Chart.create(
   ]
 )
 
-playlist = Playlist.create(
+playlists = Playlist.create(
   [
     {show_id: 1, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
     {show_id: 2, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
@@ -119,3 +120,20 @@ playlist = Playlist.create(
     {show_id: -1, chart_id: 8, date:DateTime.new(2009,9,1,17)}, 
   ]
 )
+
+def gen_tag
+  str = String.new
+  len = rand(4) + 1
+  for i in 1..len
+    str += $words.sample + " "
+  end
+  return str
+end
+
+# Generate songs randomly for charts and playlists
+playlists.each do |playlist|
+  for i in 0..rand(4)
+    Song.create(playlist_id: playlist.id, title: gen_tag, artist: gen_tag, album: gen_tag, label: gen_tag, genre: gen_tag, time:DateTime.new(2009,9,1,17))
+  end
+end
+
