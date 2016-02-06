@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
   respond_to :json
 
   def index
-
+    @songs = Song.all
   end
 
   def show
