@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :songs
-  resources :charts
-  resources :playlists
-  resources :user_shows
-  resources :shows
-  devise_for :users
+
+  devise_for :users do
+     resources :shows do
+       resources :playlists do
+         resources :songs
+       end
+     end
+     resources :user_shows
+  end
+
 
   root "profile#index"
 
