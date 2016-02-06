@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130184959) do
+ActiveRecord::Schema.define(version: 20160206090654) do
 
   create_table "charts", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160130184959) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "chart_id"
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160130184959) do
     t.datetime "time"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "song_id"
   end
 
   create_table "user_shows", force: :cascade do |t|
