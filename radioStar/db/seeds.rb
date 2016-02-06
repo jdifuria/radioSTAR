@@ -39,49 +39,49 @@ users = User.create(
 
 shows = Show.create(
   [
-    { name: 'AB', timeslot:'MON09' }
-    { name: 'BC', timeslot:'MON10' }  
-    { name: 'CD', timeslot:'MON14' } 
-    { name: 'DE', timeslot:'MON21' } 
-    { name: 'EF', timeslot:'TUE09' } 
-    { name: 'FG', timeslot:'TUE10' }
-    { name: 'GH', timeslot:'TUE14' } 
-    { name: 'HI', timeslot:'TUE21' } 
-    { name: 'IJ', timeslot:'WED09' }
-    { name: 'JK', timeslot:'THU10' } 
-    { name: 'KL', timeslot:'FRI14' } 
-    { name: 'LM', timeslot:'SAT21' }
-    { name: 'MN', timeslot:'SUN12' } 
-    { name: 'NO', timeslot:'SUN14' } 
-    { name: 'OP', timeslot:'SUN17' }
+    { name: 'AB', timeslot:'MON09' },
+    { name: 'BC', timeslot:'MON10' },  
+    { name: 'CD', timeslot:'MON14' }, 
+    { name: 'DE', timeslot:'MON21' }, 
+    { name: 'EF', timeslot:'TUE09' }, 
+    { name: 'FG', timeslot:'TUE10' },
+    { name: 'GH', timeslot:'TUE14' }, 
+    { name: 'HI', timeslot:'TUE21' }, 
+    { name: 'IJ', timeslot:'WED09' },
+    { name: 'JK', timeslot:'THU10' },
+    { name: 'KL', timeslot:'FRI14' },
+    { name: 'LM', timeslot:'SAT21' },
+    { name: 'MN', timeslot:'SUN12' }, 
+    { name: 'NO', timeslot:'SUN14' }, 
+    { name: 'OP', timeslot:'SUN17' },
   ]
 )
 
 userShows = UserShow.create(
   [
-    {show_id: 1 , user_id: 1 }
-    {show_id: 1 , user_id: 2 }
-    {show_id: 2 , user_id: 2 }
-    {show_id: 2 , user_id: 3 }
-    {show_id: 3 , user_id: 3 }
-    {show_id: 3 , user_id: 4 }
-    {show_id: 4 , user_id: 4 }
-    {show_id: 4 , user_id: 5 }
-    {show_id: 5 , user_id: 5 }
-    {show_id: 5 , user_id: 6 }
-    {show_id: 6 , user_id: 6 }
-    {show_id: 6 , user_id: 7 }
-    {show_id: 7 , user_id: 7 }
-    {show_id: 7 , user_id: 8 }
-    {show_id: 8 , user_id: 8 }
-    {show_id: 8 , user_id: 9 }
-    {show_id: 9 , user_id: 9}
-    {show_id: 9 , user_id: 10 }
-    {show_id: 10 , user_id: 10 }
-    {show_id: 10 , user_id: 11 }
-    {show_id: 11 , user_id: 11 }
-    {show_id: 11 , user_id: 12 }
-    {show_id: 12 , user_id: 12 }
-    {show_id: 12 , user_id: 13 }
+    {show_id: 1 , user_id: 1 },
+    {show_id: 1 , user_id: 2 },
+    {show_id: 2 , user_id: 2 },
+    {show_id: 2 , user_id: 3 },
+    {show_id: 3 , user_id: 3 },
+    {show_id: 3 , user_id: 4 },
+    {show_id: 4 , user_id: 4 },
+    {show_id: 4 , user_id: 5 },
+    {show_id: 5 , user_id: 5 },
+    {show_id: 5 , user_id: 6 },
+    {show_id: 6 , user_id: 6 },
+    {show_id: 6 , user_id: 7 },
+    {show_id: 7 , user_id: 7 },
+    {show_id: 7 , user_id: 8 },
+    {show_id: 8 , user_id: 8 },
+    {show_id: 8 , user_id: 9 },
+    {show_id: 9 , user_id: 9},
+    {show_id: 9 , user_id: 10 },
+    {show_id: 10 , user_id: 10 },
+    {show_id: 10 , user_id: 11 },
+    {show_id: 11 , user_id: 11 },
+    {show_id: 11 , user_id: 12 },
+    {show_id: 12 , user_id: 12 },
+    {show_id: 12 , user_id: 13 },
   ]
 )
