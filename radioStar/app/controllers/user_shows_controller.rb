@@ -1,15 +1,18 @@
 class UserShowsController < ApplicationController
   before_action :set_user_show, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
   # GET /user_shows
   # GET /user_shows.json
   def index
     @user_shows = UserShow.all
+    respond_with @user_shows
   end
 
   # GET /user_shows/1
   # GET /user_shows/1.json
   def show
+    respond_with @user_show
   end
 
   # GET /user_shows/new
