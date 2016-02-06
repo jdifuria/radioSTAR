@@ -1,15 +1,18 @@
 class ChartsController < ApplicationController
   before_action :set_chart, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
   # GET /charts
   # GET /charts.json
   def index
     @charts = Chart.all
+    respond_with @charts
   end
 
   # GET /charts/1
   # GET /charts/1.json
   def show
+    respond_with @chart
   end
 
   # GET /charts/new
