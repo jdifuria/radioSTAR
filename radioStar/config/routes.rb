@@ -9,6 +9,10 @@ Rails.application.routes.draw do
      resources :user_shows
   end
 
+  resources :charts do
+    resources :songs
+  end
+
 
   root "profile#index"
 
