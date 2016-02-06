@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206090654) do
+ActiveRecord::Schema.define(version: 20160206224448) do
 
   create_table "charts", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 20160206090654) do
     t.integer  "song_id"
   end
 
+  create_table "stations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "station_id"
+    t.string   "station_name"
+    t.string   "station_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "user_shows", force: :cascade do |t|
     t.integer  "show_id"
     t.integer  "user_id"
@@ -63,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160206090654) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.integer  "station_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -80,5 +90,6 @@ ActiveRecord::Schema.define(version: 20160206090654) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["station_id"], name: "index_users_on_station_id"
 
 end
