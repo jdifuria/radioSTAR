@@ -85,3 +85,37 @@ userShows = UserShow.create(
     {show_id: 12 , user_id: 13 },
   ]
 )
+
+chart = Chart.create(
+  [
+    {name:'chart1' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart2' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart3' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart4' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart5' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart6' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart7' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart8' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart9' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+  ]
+)
+
+playlist = Playlist.create(
+  [
+    {show_id: 1, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 2, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 3, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 4, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 5, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 6, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 7, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 1, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 2, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 3, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 4, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 5, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 6, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 7, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: -1, chart_id: 8, date:DateTime.new(2009,9,1,17)}, 
+  ]
+)
