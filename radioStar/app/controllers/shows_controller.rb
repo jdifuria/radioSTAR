@@ -1,15 +1,18 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :edit, :update, :destroy]
+  respond_to :json
 
   # GET /shows
   # GET /shows.json
   def index
     @shows = Show.all
+    respond_with @shows
   end
 
   # GET /shows/1
   # GET /shows/1.json
   def show
+    respond_with @show
   end
 
   # GET /shows/new
