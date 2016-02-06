@@ -4,10 +4,9 @@ class ProfileController < ApplicationController
 
   def index
     @songs = Song.all
-    
   end
 
   def show
-
+    @user = current_user
   end
 end
