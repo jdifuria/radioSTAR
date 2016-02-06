@@ -1,0 +1,33 @@
+<%= form_for(@station) do |f| %>
+  <% if @station.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
+
+      <ul>
+      <% @station.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :station_id %><br>
+    <%= f.number_field :station_id %>
+  </div>
+  <div class="field">
+    <%= f.label :station_name %><br>
+    <%= f.text_field :station_name %>
+  </div>
+  <div class="field">
+    <%= f.label :station_url %><br>
+    <%= f.text_field :station_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
