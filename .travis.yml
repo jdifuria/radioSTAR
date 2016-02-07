@@ -6,4 +6,4 @@ env:
   -DB=sqlite
 
 script:
-  -RAILS_ENV=production rake db:migrate --trace
+  -rake db:migrate --trace
