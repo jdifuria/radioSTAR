@@ -1,4 +1,8 @@
 language: ruby
+
+install:
+  -bundle install
+  
 rvm:
   - "2.2.1"
 
