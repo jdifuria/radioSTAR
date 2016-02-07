@@ -17,23 +17,22 @@ ActiveRecord::Schema.define(version: 20160206224448) do
     t.string   "name"
     t.string   "country"
     t.string   "source_url"
-    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "chart_id"
   end
 
   create_table "playlists", force: :cascade do |t|
     t.integer  "show_id"
     t.integer  "chart_id"
-    t.integer  "playlist_id"
     t.datetime "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_index "playlists", ["chart_id"], name: "index_playlists_on_chart_id"
+  add_index "playlists", ["show_id"], name: "index_playlists_on_show_id"
+
   create_table "shows", force: :cascade do |t|
-    t.integer  "show_id"
     t.string   "name"
     t.string   "timeslot"
     t.datetime "created_at", null: false
@@ -50,17 +49,19 @@ ActiveRecord::Schema.define(version: 20160206224448) do
     t.datetime "time"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "song_id"
   end
+
+  add_index "songs", ["playlist_id"], name: "index_songs_on_playlist_id"
 
   create_table "stations", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "station_id"
     t.string   "station_name"
     t.string   "station_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "stations", ["user_id"], name: "index_stations_on_user_id"
 
   create_table "user_shows", force: :cascade do |t|
     t.integer  "show_id"
@@ -68,6 +69,9 @@ ActiveRecord::Schema.define(version: 20160206224448) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "user_shows", ["show_id"], name: "index_user_shows_on_show_id"
+  add_index "user_shows", ["user_id"], name: "index_user_shows_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
