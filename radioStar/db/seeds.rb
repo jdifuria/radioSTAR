@@ -121,6 +121,18 @@ playlists = Playlist.create(
   ]
 )
 
+stations = Station.create(
+  [
+    {user_id: 1, station_name: "kcsc", station_url: "kcscradio.com"},
+    {user_id: 2, station_name: "kcsc", station_url: "kcscradio.com"},
+    {user_id: 3, station_name: "kcsc", station_url: "kcscradio.com"},
+    {user_id: 4, station_name: "kcsc", station_url: "lmnoradio.com"},
+    {user_id: 5, station_name: "lmno", station_url: "lmnoradio.com"},
+    {user_id: 6, station_name: "lmno", station_url: "lmnoradio.com"},
+    {user_id: 7, station_name: "lmno", station_url: "lmnoradio.com"},
+  ]
+)
+
 def gen_tag
   str = String.new
   len = rand(4) + 1
