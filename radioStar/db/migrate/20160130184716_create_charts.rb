@@ -4,7 +4,6 @@ class CreateCharts < ActiveRecord::Migration
       t.string :name
       t.string :country
       t.string :source_url
-      t.datetime :date
 
       t.timestamps null: false
     end

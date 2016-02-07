@@ -10,15 +10,18 @@ class StationsController < ApplicationController
   # GET /stations/1
   # GET /stations/1.json
   def show
+    @users = User.all
   end
 
   # GET /stations/new
   def new
     @station = Station.new
+    @user = User.new
   end
 
   # GET /stations/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /stations

@@ -1,9 +1,8 @@
 class CreatePlaylists < ActiveRecord::Migration
   def change
     create_table :playlists do |t|
-      t.integer :show_id
-      t.integer :chart_id
-      t.integer :playlist_id
+      t.references :show, index:true, foreign_key: true
+      t.references :chart, index:true, foreign_key: true
       t.datetime :date
 
       t.timestamps null: false

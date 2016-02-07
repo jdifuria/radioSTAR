@@ -6,6 +6,8 @@ class UserShowsController < ApplicationController
   # GET /user_shows.json
   def index
     @user_shows = UserShow.all
+    @users = User.all
+    @shows = Show.all
     respond_with @user_shows
   end
 
@@ -18,6 +20,8 @@ class UserShowsController < ApplicationController
   # GET /user_shows/new
   def new
     @user_show = UserShow.new
+    @users = User.all
+    @shows = Show.all
   end
 
   # GET /user_shows/1/edit

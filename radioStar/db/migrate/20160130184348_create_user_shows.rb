@@ -1,8 +1,9 @@
 class CreateUserShows < ActiveRecord::Migration
   def change
     create_table :user_shows do |t|
-      t.integer :show_id
-      t.integer :user_id
+
+      t.references :show, index:true, foreign_key: true
+      t.references :user, index:true, foreign_key: true
 
       t.timestamps null: false
     end
