@@ -1,7 +1,7 @@
 language: ruby
 
 install:
-  ./install.sh
-
+  bundle install
+  
 script:
   ./start.sh
