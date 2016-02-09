@@ -2,3 +2,6 @@ language: ruby
 
 install:
   ./install.sh
+
+script:
+  ./start.sh
