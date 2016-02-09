@@ -12,14 +12,32 @@ myApp.config([
 
 myApp.controller('MyController', ['$scope', '$http', function MyController($scope, $http){
 
-  $scope.getPlaylist = function(){
-    $http.get().success(function(data){
+  $scope.getPlaylists = function(show_id){
+    $http.get(current_prefix + '/users/' + current_user + '/shows/' + show_id + '/playlists.json').success(function(data){
       console.log(data);
 		});
   }
 
   $scope.getShows = function(){
     $http.get(current_prefix + '/users/' + current_user  + '/shows.json').success(function(data){
+      console.log(data);
+    })
+  }
+
+  $scope.getCharts = function(){
+    $http.get(current_prefix + '/charts.json').success(function(data){
+      console.log(data);
+    })
+  }
+
+  $scope.getChartsSongs = function(chart_id){
+    $http.get(current_prefix + '/charts/' + chart_id + '/songs.json').success(function(data){
+      console.log(data);
+    })
+  }
+
+  $scope.getPlaylistsSongs = function(show_id, playlist_id){
+    $http.get(current_prefix + '/users/' + current_user + '/shows/' + show_id + '/playlists/' + playlist_id + '/songs.json').success(function(data){
       console.log(data);
     })
   }

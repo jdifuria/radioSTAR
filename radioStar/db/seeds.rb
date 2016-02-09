@@ -41,19 +41,19 @@ users = User.create(
 shows = Show.create(
   [
     { name: 'AB', timeslot:'MON09' },
-    { name: 'BC', timeslot:'MON10' },  
-    { name: 'CD', timeslot:'MON14' }, 
-    { name: 'DE', timeslot:'MON21' }, 
-    { name: 'EF', timeslot:'TUE09' }, 
+    { name: 'BC', timeslot:'MON10' },
+    { name: 'CD', timeslot:'MON14' },
+    { name: 'DE', timeslot:'MON21' },
+    { name: 'EF', timeslot:'TUE09' },
     { name: 'FG', timeslot:'TUE10' },
-    { name: 'GH', timeslot:'TUE14' }, 
-    { name: 'HI', timeslot:'TUE21' }, 
+    { name: 'GH', timeslot:'TUE14' },
+    { name: 'HI', timeslot:'TUE21' },
     { name: 'IJ', timeslot:'WED09' },
     { name: 'JK', timeslot:'THU10' },
     { name: 'KL', timeslot:'FRI14' },
     { name: 'LM', timeslot:'SAT21' },
-    { name: 'MN', timeslot:'SUN12' }, 
-    { name: 'NO', timeslot:'SUN14' }, 
+    { name: 'MN', timeslot:'SUN12' },
+    { name: 'NO', timeslot:'SUN14' },
     { name: 'OP', timeslot:'SUN17' },
   ]
 )
@@ -89,35 +89,47 @@ userShows = UserShow.create(
 
 charts = Chart.create(
   [
-    {name:'chart1' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart2' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart3' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart4' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart5' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart6' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart7' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart8' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
-    {name:'chart9' , country:'USA' , source_url:'www.google.com' , date: DateTime.new(2009,9,1,17) },
+    {name:'chart1' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart2' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart3' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart4' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart5' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart6' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart7' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart8' , country:'USA' , source_url:'www.google.com' },
+    {name:'chart9' , country:'USA' , source_url:'www.google.com' },
   ]
 )
 
 playlists = Playlist.create(
   [
-    {show_id: 1, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: 2, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: 3, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: 4, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: 5, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: 6, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: 7, chart_id: -1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 1, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 2, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 3, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 4, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 5, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 6, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 7, date:DateTime.new(2009,9,1,17)}, 
-    {show_id: -1, chart_id: 8, date:DateTime.new(2009,9,1,17)}, 
+    {show_id: 1, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: 2, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: 3, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: 4, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: 5, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: 6, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: 7, chart_id: -1, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 1, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 2, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 3, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 4, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 5, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 6, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 7, date:DateTime.new(2009,9,1,17)},
+    {show_id: -1, chart_id: 8, date:DateTime.new(2009,9,1,17)},
+  ]
+)
+
+stations = Station.create(
+  [
+    {user_id: 1, station_name: "kcsc", station_url: "kcscradio.com"},
+    {user_id: 2, station_name: "kcsc", station_url: "kcscradio.com"},
+    {user_id: 3, station_name: "kcsc", station_url: "kcscradio.com"},
+    {user_id: 4, station_name: "kcsc", station_url: "lmnoradio.com"},
+    {user_id: 5, station_name: "lmno", station_url: "lmnoradio.com"},
+    {user_id: 6, station_name: "lmno", station_url: "lmnoradio.com"},
+    {user_id: 7, station_name: "lmno", station_url: "lmnoradio.com"},
   ]
 )
 
@@ -136,4 +148,3 @@ playlists.each do |playlist|
     Song.create(playlist_id: playlist.id, title: gen_tag, artist: gen_tag, album: gen_tag, label: gen_tag, genre: gen_tag, time:DateTime.new(2009,9,1,17))
   end
 end
-
