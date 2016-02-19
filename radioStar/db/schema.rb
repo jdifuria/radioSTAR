@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(version: 20160206224448) do
     t.string   "name"
     t.string   "country"
     t.string   "source_url"
+    t.integer  "station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "charts", ["station_id"], name: "index_charts_on_station_id"
 
   create_table "playlists", force: :cascade do |t|
     t.integer  "show_id"
@@ -55,12 +58,16 @@ ActiveRecord::Schema.define(version: 20160206224448) do
 
   create_table "stations", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "chart_id"
+    t.integer  "show_id"
     t.string   "station_name"
     t.string   "station_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  add_index "stations", ["chart_id"], name: "index_stations_on_chart_id"
+  add_index "stations", ["show_id"], name: "index_stations_on_show_id"
   add_index "stations", ["user_id"], name: "index_stations_on_user_id"
 
   create_table "user_shows", force: :cascade do |t|

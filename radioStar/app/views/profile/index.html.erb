@@ -1,12 +1,64 @@
+<%= javascript_include_tag 'profile' %>
 <script type="text/javascript">
   var user_id = <%= current_user.id %>;
+  var email = "<%= current_user.email %>";
+  var password = "Radio789*";
 </script>
 
-<div class="container">
-  <div class="jumbotron">
-    <p>Hello, <%= current_user.name %></p>
-    <p>Email = <%= current_user.email %></p>
-    <p>User id = <%= current_user.id %></p>
-    <p>Compliance = <%= current_user.compliance %></p>
+<body ng-app="myApp" ng-controller="MyController">
+  <nav class="space-theme navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <ul class="nav navbar-nav">
+          <li>
+            <a class="navbar-brand" href="/" data-toggle="tooltip" data-placement="bottom" title="Statistical Tracking and Automated Review">RadioSTAR</a>
+          </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="mainMenu">
+      <ul class="nav navbar-nav">
+        <li class="<%= is_active(root_url) %>">
+          <%= link_to "Home", root_url, :remote => true %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+          </li>
+        <% else %>
+          <li class="<%= is_active(new_user_session_path) %>">
+            <%= link_to "Login", new_user_session_path %>
+          </li>
+          <li class="<%= is_active(new_user_registration_path) %>">
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
   </div>
-</div>
+</nav>
+<br><br><br>
+<% if user_signed_in? %>
+     <div class="col-xs-8" >
+      <div id="image"><img src="<%= image_path('radiostar2.png') %>" style='width:100%' ></div>
+      <div class="logo">SHOWS</div>
+      <div class="logo">LAST 10 TRACKS</div>
+    </div>
+    <div class="col-xs-6" >
+      <br> <br><br><br><br>
+      <div class="side"><img src="<%=image_path("Active-Instagram-3-icon.png")%>" style='width:18%' ><img src="<%=image_path("social-facebook-box-blue-icon.png")%>" style='width:20%' ><img src="<%=image_path("Twitter-icon.png")%>" style='width:19%' ></div>
+      <div class="side">LOG YOUR SHOW</div>
+      <div class="side">ANNOUNCEMENTS</div>
+      <div class="side">LOG OUT</div>
+    </div>
+<% else %>
+  <%= yield %>
+<% end %>
+</body>
