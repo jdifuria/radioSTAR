@@ -35,6 +35,7 @@ users = User.create(
     { email: 'x@x.com', name: "Mrs. Xerox",      password: "x", password_confirmation: "x", compliance: 100},
     { email: 'y@y.com', name: "Mrs. Yak",        password: "y", password_confirmation: "y", compliance: 100},
     { email: 'z@z.com', name: "Mrs. Zebra",      password: "z", password_confirmation: "z", compliance: 100},
+    { email: 'rpm@kcscradio.com', name: "RPM Director", password: 'rpm', password_confirmation: 'rpm', compliance: 100}
   ]
 )
 
