@@ -59,7 +59,7 @@ class ChartsController < ApplicationController
   def destroy
     @chart.destroy
     respond_to do |format|
-      format.html { redirect_to charts_url, notice: 'Chart was successfully destroyed.' }
+      format.html { redirect_to station_url(@chart.station_id), notice: 'Chart was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
