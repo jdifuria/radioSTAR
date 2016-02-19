@@ -42,8 +42,15 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
     })
   }
 
+  $scope.testConnection = function(){
+    $http.post("kcsc.radioactivity.fm/login.html?", {'youremail': email, 'yourpassword': password}).success(function(data){
+      console.log("Logged successfully to radioactivity.");
+    })
+  }
+
   $scope.init = function(){
     $scope.getShows();
+    $scope.testConnection();
   }
 
     $scope.init();
