@@ -4,7 +4,7 @@ var fs = require('fs');
 var passport = require('passport');
 var url = require('url');
 var fs = require('fs');
-var PlayList = require('../app/models/ListSchema');
+var Song = require('../app/models/ListSchema');
 var Account = require('../app/models/AccountSchema');
 var Show = require('../app/models/ShowSchema');
 
@@ -13,7 +13,7 @@ function Proxy(email, password) {
   this.password = password;
   this.playlist_id = '';
 }
-  
+
 Proxy.prototype.edit = function(playlist_id) {
 
   this.playlist_id = playlist_id;
@@ -25,7 +25,7 @@ Proxy.prototype.upload = function(playlist_id) {
   console.log('Starting upload of playlist %s to Radioactivity', playlist_id);
   this.playlist_id = playlist_id;
   return this.login(this.set_upload_data, this.set_upload_options, this.upload_callback);
-  
+
 }//<--------- END Upload -----------||
 
 Proxy.prototype.login = function (set_data, set_options, callback) {
@@ -105,7 +105,7 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
         var ra_id = '';
 
         console.log('nList.log_date: ', nList.log_date);
-         
+
         if(hours == 0){
           hours=12;
         }
@@ -173,7 +173,7 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
           var query_data = url.parse(ra_url, true).query;
           if (query_data.oid) {
               id = query_data.oid
-          } 
+          }
           else {
             id = -1;
           }
@@ -202,7 +202,7 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
           return set_data(that, cookie, params, callback)
 
         }, 3000);
-      } 
+      }
     });
   }//<------------ END Convert Parameters --------------||
 
@@ -243,7 +243,7 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
       oid: ra_id,
       submit: 'make these changes to this entry'
     });
-    
+
     return that.set_edit_options(data, cookie, callback);
   }
 
@@ -395,7 +395,7 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
     var month = params[8];
     var day = params[9];
     var year = params[10];
-    
+
 
     find_song_callback = function(response) {
       if(response.statusCode == 200) {
@@ -406,8 +406,8 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
           $('A').each(function() {
             if($(this).text().match(/(\d+\/\d+\/\d+\s\d+:\d+\s[ap]m)/g)) {
               var date = ($(this).text()).split(/\/|:|\s/);
-              
-              if(date[0] == month && date[1] == day && date[2] == year && 
+
+              if(date[0] == month && date[1] == day && date[2] == year &&
                   date[3] == hours && date[4] == minutes && date[5] == ampm) {
                 this.playlist._doc.ra_url = $(this).attr('href');
                 this.playlist._doc.update({ra_url: playlist.ra_url}, function (err) {
@@ -437,4 +437,3 @@ Proxy.prototype.login = function (set_data, set_options, callback) {
   }//<--------- END find song -----------||
 
   module.exports = Proxy
-
