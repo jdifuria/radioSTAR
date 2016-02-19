@@ -1,13 +1,7 @@
 language: ruby
 
 install:
-  -bundle install
+  bundle install
   
-rvm:
-  - "2.2.1"
-
-env:
-  -DB=sqlite
-
 script:
-  -rake db:migrate --trace
+  ./start.sh
