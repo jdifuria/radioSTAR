@@ -11,6 +11,8 @@ class StationsController < ApplicationController
   # GET /stations/1.json
   def show
     @users = User.all
+    @shows = Show.all
+    @charts = Chart.all
   end
 
   # GET /stations/new

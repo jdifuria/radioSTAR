@@ -35,7 +35,7 @@ class UserShowsController < ApplicationController
 
     respond_to do |format|
       if @user_show.save
-        format.html { redirect_to @user_show, notice: 'User show was successfully created.' }
+        format.html { redirect_to show_url(@user_show.show_id), notice: 'User was added to Show.' }
         format.json { render :show, status: :created, location: @user_show }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class UserShowsController < ApplicationController
   def update
     respond_to do |format|
       if @user_show.update(user_show_params)
-        format.html { redirect_to @user_show, notice: 'User show was successfully updated.' }
+        format.html { redirect_to show_url(@user_show.show_id), notice: 'Users for Show were successfully updated.' }
         format.json { render :show, status: :ok, location: @user_show }
       else
         format.html { render :edit }
