@@ -53,3 +53,4 @@ gem 'binding_of_caller', group: :development
 ################################
 ## Custom Gems End #############
 ################################
+gem "rspec-rails", :group => [:development, :test]

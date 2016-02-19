@@ -1,3 +1,3 @@
 json.array!(@songs) do |song|
-  json.extract! song, :id, :playlist_id, :title, :artist, :album, :label, :genre, :time
+  json.extract! song, :id, :title, :artist, :album, :label, :genre, :time
 end
