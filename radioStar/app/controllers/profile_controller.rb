@@ -9,6 +9,7 @@ class ProfileController < ApplicationController
     @userShows = UserShow.all
     @playlists = Playlist.all
     @charts = Chart.all
+    @song = Song.new
   end
 
   def show
