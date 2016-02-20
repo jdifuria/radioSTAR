@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :playlist_id %><br>
-    <%= f.number_field :playlist_id %>
+    <%= f.hidden_field :playlist_id, :readonly => true %>
   </div>
+  <div class="container col-xs-6">
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -23,6 +23,8 @@
     <%= f.label :artist %><br>
     <%= f.text_field :artist %>
   </div>
+  </div>
+  <div class="container col-xs-6">
   <div class="field">
     <%= f.label :album %><br>
     <%= f.text_field :album %>
@@ -31,6 +33,9 @@
     <%= f.label :label %><br>
     <%= f.text_field :label %>
   </div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+  <div class="container">
   <div class="field">
     <%= f.label :genre %><br>
     <%= f.text_field :genre %>
@@ -39,7 +44,9 @@
     <%= f.label :time %><br>
     <%= f.datetime_select :time %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

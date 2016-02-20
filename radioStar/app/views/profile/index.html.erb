@@ -12,15 +12,19 @@
       <div class="container logo">
         <ul class="nav nav-tabs">
           <% @userShows.each do |x| %>
+            <% playlist_count = 0 %>
             <% if x.user_id == current_user.id %>
-              <li><a href="#"><%= Show.find(x.show_id).name %></a></li>
+              <li <% if playlist_count == 1%>class="active"<%end%>><a href="#<%= x.show_id %>"><%= Show.find(x.show_id).name %></a></li>
+              <% playlist_count += 1 %>
             <% end %>
           <% end %>
         </ul>
-        <%= render :partial => 'songs/form', :locals => {:song => @song} %>
+        <%= render :partial => 'songs/form', :locals => {:song => @song, :playlist_id => 1} %>
       </div>
+<!--
       <div class="logo">SHOWS</div>
       <div class="logo">LAST 10 TRACKS</div>
+-->
     </div>
     <br><br><br>
     <div class="col-xs-4">
