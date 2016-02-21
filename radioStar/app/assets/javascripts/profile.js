@@ -42,8 +42,17 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
     })
   }
 
+  $scope.testConnection = function(){
+    console.log("attemping to log with username: %s and password: %s", email, password);
+    $http.post(current_prefix + '/profile/radioactivity.json', {'email': email, 'password': password}).success(function(data){
+      console.log(data);
+    })
+  }
+
   $scope.init = function(){
-    $scope.getShows();
+    console.log("starting.");
+    //$scope.getShows();
+    $scope.testConnection();
   }
 
     $scope.init();

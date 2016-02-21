@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+  resources :songs
   resources :stations do
     resources :users do
        resources :shows do
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   root "profile#index"
 
   get 'profile/index'
+  post 'profile/radioactivity', to: 'profile#radioactivity'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

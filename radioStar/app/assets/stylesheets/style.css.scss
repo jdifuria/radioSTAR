@@ -1,16 +1,42 @@
-body {
-    background-color:#888;
-    height: 100%;
-    width: 100%;
-    font-family:"myriad-pro-semi-condensed-1","myriad-pro-semi-condensed-2"; /* fonts from typekit */
-    font-weight:bold;
-    font-style:normal;
-    font-size:22
-    line-height:1.5;
-    letter-spacing:0.5px;
-    text-decoration:none;
-    text-align:left;
-    margin: 0 0 0 0;
+body{
+  background: assets-path('background_space.png');
+  height: 100%;
+  width: 100%;
+  font-family:"myriad-pro-semi-condensed-1","myriad-pro-semi-condensed-2"; /* fonts from typekit */
+  font-weight:bold;
+  font-style:normal;
+  font-size:22;
+  line-height:1.5;
+  letter-spacing:0.5px;
+  text-decoration:none;
+  text-align:left;
+  margin: 0 0 0 0;
+}
+
+.small-text{
+  font-size:8px;
+}
+
+.navbar{
+  color: black;
+  background-color: white;
+}
+
+.space-theme{
+  background-color:black;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.spacebg{
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: image-url('/images/background_space.png');
 }
 
 .clone {
@@ -27,42 +53,36 @@ body {
   float: left;
 }
 .col-xs-16 {
-    background:#888;
   display: inline-block;
   stroke:white;
   height: 100px;
   width: 100%;
 }
 .col-xs-15 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
   width: 93.75%;
 }
 .col-xs-14 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
   width: 87.5%;
 }
 .col-xs-13 {
-       background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
   width: 81.25%;
 }
 .col-xs-12 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 200px;
   width: 75%;
 }
 .col-xs-11 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -92,7 +112,6 @@ body {
   width: 62.5%;
 }
 .col-xs-9 {
-       background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -105,7 +124,6 @@ body {
   width: 50%;
 }
 .col-xs-7 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -113,7 +131,6 @@ body {
 }
 
 .side {
-     background:#888;
   display: inline-block;
   stroke:white;
   height: 100px;
@@ -126,7 +143,6 @@ body {
   width: 37.5%;
 }
 .col-xs-5 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -139,14 +155,12 @@ body {
   width: 25%;
 }
 .col-xs-3 {
-       background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
   width: 18.75%;
 }
 .col-xs-2 {
-       background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -167,7 +181,6 @@ body {
 }
 
 .col-xs-0 {
-      background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;

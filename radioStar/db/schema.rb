@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206224448) do
+ActiveRecord::Schema.define(version: 20160220102906) do
 
   create_table "charts", force: :cascade do |t|
     t.string   "name"
     t.string   "country"
     t.string   "source_url"
+    t.integer  "station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "charts", ["station_id"], name: "index_charts_on_station_id"
 
   create_table "playlists", force: :cascade do |t|
     t.integer  "show_id"
@@ -37,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160206224448) do
     t.string   "timeslot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "station_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -55,12 +59,16 @@ ActiveRecord::Schema.define(version: 20160206224448) do
 
   create_table "stations", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "chart_id"
+    t.integer  "show_id"
     t.string   "station_name"
     t.string   "station_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  add_index "stations", ["chart_id"], name: "index_stations_on_chart_id"
+  add_index "stations", ["show_id"], name: "index_stations_on_show_id"
   add_index "stations", ["user_id"], name: "index_stations_on_user_id"
 
   create_table "user_shows", force: :cascade do |t|
@@ -90,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160206224448) do
     t.float    "compliance"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
