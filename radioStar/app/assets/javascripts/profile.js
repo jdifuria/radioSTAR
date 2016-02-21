@@ -46,11 +46,16 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
     console.log("attemping to log with username: %s and password: %s", email, password);
     $http.post(current_prefix + '/profile/radioactivity.json', {'email': email, 'password': password}).success(function(data){
       console.log(data);
+      if(data.code == 200 && !/No valid user exists/.test(data.body)){
+        console.log("login successful");
+      }
+      else{
+        console.log("Can't log in radioactivity.");
+      }
     })
   }
 
   $scope.init = function(){
-    console.log("starting.");
     //$scope.getShows();
     $scope.testConnection();
   }

@@ -14,12 +14,17 @@ class ProfileController < ApplicationController
     password = params[:password]
     email = params[:email]
 
+    @response = 0;
+
     @repsonse = Unirest.post "http://kcsc.radioactivity.fm/login.html?",
-    parameters:{youremail: email, yourpassword: password} {|response|
-      throw "done"
+    parameters:{youremail: email, yourpassword: password, submitted: 1} {|response|
       @response = response
       respond_with @response
     }
+
+    # wait for unirest request to respond.
+    while @response == 0
+    end
 
   end
 
