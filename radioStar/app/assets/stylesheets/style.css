@@ -83,7 +83,7 @@ body {
 #image{
     margin:auto;
     max-width:100%;
-        
+
 }
 
 .col-xs-10 {
@@ -99,7 +99,6 @@ body {
   width: 56.25%;
 }
 .col-xs-8 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -134,7 +133,6 @@ body {
   width: 31.25%;
 }
 .col-xs-4 {
-        background:#888;
   display: inline-block;
   stroke:white;
   height: 70px;
@@ -265,4 +263,3 @@ body {
 #clear {
   opacity: 0.5;
 }
-
