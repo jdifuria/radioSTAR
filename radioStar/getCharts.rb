@@ -3,7 +3,7 @@ require 'feedjira'
 
 #array declaration
 topSongs = Array.new
-topSummaries = Array.new
+topArtists = Array.new
 
 #Feedjira fetch
 url = "http://www.billboard.com/rss/charts/hot-100"
@@ -40,14 +40,14 @@ for x in 0..99
 
   # add artist to list
   summary.push(curSummary)
-  topSummaries.push(summary)
+  topArtists.push(summary)
 end
 
 #print final results
 for x in 0..99
   puts
   puts topSongs[x]
-  puts topSummaries[x]
+  puts topArtists[x]
 end
 
 puts date
