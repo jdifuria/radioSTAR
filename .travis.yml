@@ -1,7 +1,0 @@
-language: ruby
-
-install:
-  bundle install
-  
-script:
-  ./start.sh
