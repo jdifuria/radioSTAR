@@ -17,4 +17,4 @@
 /tmp
 
 # ignore precompile assets
-/public/assets
+/public/assets/*
