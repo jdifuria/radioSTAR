@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   root "profile#index"
 
   get 'profile/index'
-  post 'profile/radioactivity', to: 'profile#radioactivity'
+  post 'profile/radioactivity_login', to: 'profile#radioactivity_login'
+  post 'profile/radioactivity_get_songs', to: 'profile#radioactivity_get_songs'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
