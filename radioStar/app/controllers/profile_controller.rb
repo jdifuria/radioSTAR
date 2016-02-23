@@ -4,6 +4,12 @@ class ProfileController < ApplicationController
 
   def index
     @songs = Song.all
+    @users = User.all
+    @shows = Show.all
+    @userShows = UserShow.all
+    @playlists = Playlist.all
+    @charts = Chart.all
+    @song = Song.new
   end
 
   def show

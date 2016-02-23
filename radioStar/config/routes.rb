@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resources :songs
   resources :stations do
     resources :users do
        resources :shows do
