@@ -48,9 +48,13 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
       console.log(data);
       if(data.code == 200 && !/No valid user exists/.test(data.body)){
         console.log("login successful");
+        $scope.radioactivity_cookie = data.headers.set_cookie[0];
+        $scope.radioactivity_cookie = $scope.radioactivity_cookie.split(';')[0];
+        console.log("Radioactivity cookie: %s", $scope.radioactivity_cookie);
       }
       else{
         console.log("Can't log in radioactivity.");
+        $scope.radioactivity_cookie = -1;
       }
     })
   }
