@@ -213,6 +213,7 @@ DEPENDENCIES
   feedjira
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   quiet_assets
   rails (= 4.2.4)
   rspec-rails
