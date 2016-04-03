@@ -121,10 +121,10 @@ playlists = Playlist.create(
 
 stations = Station.create(
   [
-    {user_id: 1, station_name: "KCSC", station_url: "kcscradio.com"},
-    {user_id: 2, station_name: "KCFR", station_url: "kcfrradio.com"},
-    {user_id: 3, station_name: "KQED", station_url: "kqedradio.com"},
-    {user_id: 4, station_name: "KQEI", station_url: "kqeiradio.com"},
+    {user_id: 1, station_name: "KCSC", station_url: "kcscradio.com", message_of_the_day: "Welcome to KCSC Radio!!!"},
+    {user_id: 2, station_name: "KCFR", station_url: "kcfrradio.com", message_of_the_day: "Welcome to KCFR Radio!!!"},
+    {user_id: 3, station_name: "KQED", station_url: "kqedradio.com", message_of_the_day: "Welcome to KQED Radio!!!"},
+    {user_id: 4, station_name: "KQEI", station_url: "kqeiradio.com", message_of_the_day: "Welcome to KQEI Radio!!!"},
   ]
 )
 
