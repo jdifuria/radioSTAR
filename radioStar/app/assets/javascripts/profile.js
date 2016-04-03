@@ -44,13 +44,31 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
 
   $scope.testConnection = function(){
     console.log("attemping to log with username: %s and password: %s", email, password);
-    $http.post(current_prefix + '/profile/radioactivity.json', {'email': email, 'password': password}).success(function(data){
+    $http.post(current_prefix + '/profile/radioactivity_login.json', {'email': email, 'password': password}).success(function(data){
       console.log(data);
+      if(data.code == 200 && !/No valid user exists/.test(data.body)){
+        console.log("login successful");
+        $scope.radioactivity_cookie = data.headers.set_cookie[0];
+        $scope.radioactivity_cookie = $scope.radioactivity_cookie.split(';')[0];
+        console.log("Radioactivity cookie: %s", $scope.radioactivity_cookie);
+        $scope.find_songs();
+      }
+      else{
+        console.log("Can't log in radioactivity.");
+        $scope.radioactivity_cookie = -1;
+      }
+    })
+  }
+
+  $scope.find_songs = function(){
+    console.log("fetching songs...");
+    $http.post(current_prefix + '/profile/radioactivity_get_songs.json', {'Cookie': $scope.radioactivity_cookie}).then(function(response){
+      console.log(response.status);
+      console.log(response.data);
     })
   }
 
   $scope.init = function(){
-    console.log("starting.");
     //$scope.getShows();
     $scope.testConnection();
   }
