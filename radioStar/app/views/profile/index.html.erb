@@ -13,47 +13,44 @@
       <p>test</p>
     </div>
   </div>
-
-      <!-- <div class="container logo">
-        <ul class="nav nav-tabs">
-          <% @userShows.each do |x| %>
-            <% playlist_count = 0 %>
-            <% if x.user_id == current_user.id %>
-              <li <% if playlist_count == 1%>class="active"<%end%>><a href="#<%= x.show_id %>"><%= Show.find(x.show_id).name %></a></li>
-              <% playlist_count += 1 %>
-            <% end %>
-          <% end %>
-        </ul>
-        <%= render :partial => 'songs/form', :locals => {:song => @song, :playlist_id => 1} %>
-      </div> -->
-      <!-- <div class="logo">
-        <table class="table table-striped table-sm">
-          <h4>Recently Played</h4>
-          <thead class="thead-inverse">
+  <div class="container">
+   <ul class="nav nav-tabs">
+     <% @userShows.each do |x| %>
+       <% playlist_count = 0 %>
+       <% if x.user_id == current_user.id %>
+         <li <% if playlist_count == 1%>class="active"<%end%>><a href="#<%= x.show_id %>"><%= Show.find(x.show_id).name %></a></li>
+         <% playlist_count += 1 %>
+       <% end %>
+     <% end %>
+   </ul>
+   <%= render :partial => 'songs/form', :locals => {:song => @song, :playlist_id => 1} %>
+  </div>
+  <div class="container">
+    <table class="table table-hover table-sm">
+      <h4>Recently Played</h4>
+      <thead class="thead-inverse">
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Label</th>
+          <th>Genre</th>
+        </tr>
+        <tbody>
+          <% results = Song.last(5).reverse %>
+          <% results.each do |x| %>
             <tr>
-              <th>Title</th>
-              <th>Artist</th>
-              <th>Album</th>
-              <th>Label</th>
-              <th>Genre</th>
+              <td class="small-text"><%= x.title %></td>
+              <td class="small-text"><%= x.artist %></td>
+              <td class="small-text"><%= x.album %></td>
+              <td class="small-text"><%= x.label %></td>
+              <td class="small-text"><%= x.genre %></td>
             </tr>
-            <tbody>
-              <% results = Song.last(5).reverse %>
-              <% results.each do |x| %>
-                <tr>
-                  <td class="small-text"><%= x.title %></td>
-                  <td class="small-text"><%= x.artist %></td>
-                  <td class="small-text"><%= x.album %></td>
-                  <td class="small-text"><%= x.label %></td>
-                  <td class="small-text"><%= x.genre %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </thead>
-        </table>
-      </div> -->
-    <!-- </div> -->
-
+          <% end %>
+        </tbody>
+      </thead>
+    </table>
+  </div>
 <% else %>
   <%= yield %>
 <% end %>

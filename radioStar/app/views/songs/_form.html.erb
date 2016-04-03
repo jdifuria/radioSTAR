@@ -5,7 +5,9 @@
 
       <ul>
       <% song.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="alert alert-danger">
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
     </div>

@@ -328,6 +328,11 @@ body{
     background-size: 100%;
 }
 
+.field {
+  size: 10%;
+}
+
+
 #home {
     background-color:black;
     z-index:2;
