@@ -2,8 +2,6 @@ body{
   background: assets-path('background_space.png');
   height: 100%;
   width: 100%;
-  font-family:"myriad-pro-semi-condensed-1","myriad-pro-semi-condensed-2"; /* fonts from typekit */
-  font-weight:bold;
   font-style:normal;
   font-size:22;
   line-height:1.5;
@@ -16,10 +14,24 @@ body{
 .small-text{
   font-size:8px;
 }
-
-.navbar{
-  color: black;
-  background-color: white;
+.navbar {
+    margin-bottom: 0;
+    background-color: #3b094f;
+    z-index: 9999;
+    border: 0;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #3b094f !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #3b094f !important;
 }
 
 .space-theme{

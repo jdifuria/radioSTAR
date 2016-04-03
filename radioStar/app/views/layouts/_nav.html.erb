@@ -21,7 +21,7 @@
   <div class="collapse navbar-collapse" id="mainMenu">
     <ul class="nav navbar-nav">
       <li class="<%= is_active(root_url) %>">
-        <%= link_to "Home", root_url, :remote => true %>
+        <%= link_to "Home", root_url %>
       </li>
       <% if user_signed_in? %>
         <% if current_user.admin == true %>
