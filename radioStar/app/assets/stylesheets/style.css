@@ -248,6 +248,72 @@ body {
   opacity: 0%;
 }
 
+.footer-button
+{
+  color:white;
+  border-color:white;
+  background-color:black;
+}
+
+.fixed-footer
+{
+  width: 100%;
+  position:absolute;
+  text-align: center;
+  bottom:0;
+  height: 60px;
+  background-color: #f5f5f5;
+  margin-bottom:0px;
+
+}
+
+.panel-transparent {
+    background: none;
+}
+
+.navbar
+{
+  color: black;
+  background-color: white;
+}
+
+.space-theme
+{
+  background-color:black;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.spacebg
+{
+  background-size: 100%;
+  background: url('../images/free_space_galaxy_texture_by_lyshastra-d77gofi.png');
+}
+
+.somespace
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-size: 100%;
+    /* Credit to Lyshastra url: http://lyshastra.deviantart.com/art/Free-Space-Galaxy-Texture-435798702 */
+    background: url('../images/free_space_galaxy_texture_by_lyshastra-d77gofi.png');
+}
+
+.space
+{
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: black 0.04em 0.01em 0.01em;
+    /* Credit to Lyshastra url: http://lyshastra.deviantart.com/art/Free-Space-Galaxy-Texture-435798702 */
+    background: url('../images/free_space_galaxy_texture_by_lyshastra-d77gofi.png');
+    background-repeat: none;
+    background-size: 100%;
+}
 
 #home {
     background-color:black;
