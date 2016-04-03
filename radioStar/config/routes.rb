@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   root "profile#index"
 
   get 'profile/index'
-  get 'manage', to: 'manage#index'
+  get 'manage', to: 'manage#index', as: "manage"
   post 'profile/radioactivity_login', to: 'profile#radioactivity_login'
   post 'profile/radioactivity_get_songs', to: 'profile#radioactivity_get_songs'
 
