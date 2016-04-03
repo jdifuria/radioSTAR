@@ -7,6 +7,7 @@ class CreateStations < ActiveRecord::Migration
 
       t.string :station_name
       t.string :station_url
+      t.string :message_of_the_day
 
       t.timestamps null: false
     end
