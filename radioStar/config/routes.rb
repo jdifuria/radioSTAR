@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :charts do
       resources :songs
     end
+    resources :shows do
+        resources :user_shows
+    end
   end
 
   root "profile#index"
