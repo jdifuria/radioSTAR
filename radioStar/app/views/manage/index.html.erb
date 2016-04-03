@@ -1,0 +1,9 @@
+<%= javascript_include_tag 'manage' %>
+<body>
+  <% if user_signed_in? && current_user.admin %>
+    <p>Here you can manage your users and shows for your station.</p>
+  <% else %>
+    <p>You shouldn't be here, you are not signed in or not an admin.</p>
+    <%= yield %>
+  <% end %>
+</body>

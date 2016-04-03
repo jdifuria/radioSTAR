@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ManageController < ApplicationController
   before_action :authenticate_user!
   respond_to :json
 
@@ -6,5 +6,7 @@ class ProfileController < ApplicationController
     @users = User.all
     @shows = Show.all
     @userShows = UserShow.all
-    @station = Station.find(station.id == current_user.station_id)
+    @station = Station.find(current_user.station_id)
   end
+
+end
