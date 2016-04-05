@@ -16,27 +16,27 @@
   <div class="field">
     <%= f.hidden_field :playlist_id, :readonly => true %>
   </div>
-    <div class="field col-xs-4">
+    <div class="col-xs-4">
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :class => "form-control"%>
     </div>
-    <div class="field col-xs-4">
+    <div class="col-xs-4">
       <%= f.label :artist %>
-      <%= f.text_field :artist %>
+      <%= f.text_field :artist, :class => "form-control" %>
     </div>
-  <div class="field col-xs-4">
+  <div class="col-xs-4">
     <%= f.label :album %>
-    <%= f.text_field :album %>
+    <%= f.text_field :album, :class => "form-control" %>
   </div>
-  <div class="field col-xs-4">
+  <div class="col-xs-4">
     <%= f.label :label %>
-    <%= f.text_field :label %>
+    <%= f.text_field :label, :class => "form-control" %>
   </div>
-  <div class="field col-xs-4">
+  <div class="col-xs-4">
     <%= f.label :genre %>
-    <%= f.text_field :genre %>
+    <%= f.text_field :genre, :class => "form-control", :placeholder => "EDM, Hip Hop, etc..." %>
   </div>
-  <div class="field col-xs-8">
+  <div class="col-xs-8">
     <%= f.label :time %><br>
     <%= f.datetime_select :time %>
   </div>
