@@ -13,11 +13,11 @@
   </div>
   <div class="container ">
    <ul class="nav nav-tabs">
+     <% playlist_count = 0 %>
      <% @userShows.each do |x| %>
-       <% playlist_count = 0 %>
        <% if x.user_id == current_user.id %>
-         <li <% if playlist_count == 1%>class="active"<%end%>><a href="#<%= x.show_id %>"><%= Show.find(x.show_id).name %></a></li>
          <% playlist_count += 1 %>
+         <li <% if playlist_count == 1%>class="active"<%end%>><a href="#<%= x.show_id %>"><%= Show.find(x.show_id).name %></a></li>
        <% end %>
      <% end %>
    </ul>
