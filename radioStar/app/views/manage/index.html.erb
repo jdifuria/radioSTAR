@@ -1,7 +1,69 @@
 <%= javascript_include_tag 'manage' %>
-<body>
+<body ng-app="myApp" ng-controller="MyController">
   <% if user_signed_in? && current_user.admin %>
-    <p>Here you can manage your users and shows for your station.</p>
+  <ul class="nav nav-tabs">
+    <li id="station_tab" role="presentation" class="active"><a href="#" ng-click="switchTab('station')">Station</a></li>
+    <li id="users_tab" role="presentation"><a href="#" ng-click="switchTab('users')">Users</a></li>
+    <li id="shows_tab" role="presentation"><a href="#" ng-click="switchTab('shows')">Shows</a></li>
+  </ul>
+    <div id="station_edit">
+      <h3>Edit Station</h3>
+      <table>
+        <tr>
+          <td><label>Station Name:</label></td>
+          <td><input type="text" name="name" placeholder="<%= @station.station_name %>"></td>
+          <td><button>change</button></td>
+        </tr>
+        <tr>
+          <td><label>Station URL:</label></td>
+          <td><input type="text" name="url" placeholder="<%= @station.station_url %>"></td>
+          <td><button>change</button></td>
+        </tr>
+        <tr>
+          <td><label>Message of the day:</label></td>
+          <td><input type="text" name="url" placeholder="message"></td>
+          <td><button>change</button></td>
+        </tr>
+      </table>
+      <h4>Edit Charts</h4>
+      <div id="charts_edit">
+        <table>
+          <% @station.charts.each do |e| %>
+          <tr>
+            <td><%= e.name %></td>
+            <td><button>change</button></td>
+            <td><button>remove</button></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div id="users_edit">
+      <h3>Edit Users</h3>
+      <table>
+        <% @users.each do |e| %>
+        <tr>
+          <td><%= e.name %></td>
+          <td><button>change</button></td>
+          <td><button>remove</button></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div id="shows_edit">
+      <h3>Edit Shows</h3>
+      <table>
+        <% @shows.each do |e| %>
+        <tr>
+          <td><%= e.name %></td>
+          <td><button>change</button></td>
+          <td><button>remove</button></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
   <% else %>
     <p>You shouldn't be here, you are not signed in or not an admin.</p>
     <%= yield %>
