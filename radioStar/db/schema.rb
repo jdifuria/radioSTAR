@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160220102906) do
   create_table "shows", force: :cascade do |t|
     t.string   "name"
     t.string   "timeslot"
+    t.float    "compliance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "station_id"
@@ -63,8 +64,9 @@ ActiveRecord::Schema.define(version: 20160220102906) do
     t.integer  "show_id"
     t.string   "station_name"
     t.string   "station_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "message_of_the_day"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "stations", ["chart_id"], name: "index_stations_on_chart_id"
@@ -95,7 +97,6 @@ ActiveRecord::Schema.define(version: 20160220102906) do
     t.string   "last_sign_in_ip"
     t.string   "name"
     t.integer  "user_id"
-    t.float    "compliance"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "admin"
