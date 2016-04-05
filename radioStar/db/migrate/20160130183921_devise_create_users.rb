@@ -33,7 +33,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :name
       t.integer :user_id
-      t.float :compliance
 
       t.timestamps null: false
     end
