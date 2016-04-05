@@ -36,9 +36,37 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
     })
   }
 
-  $scope.getPlaylistsSongs = function(show_id, playlist_id){
-    $http.get(current_prefix + '/users/' + current_user + '/shows/' + show_id + '/playlists/' + playlist_id + '/songs.json').success(function(data){
+  $scope.getPlaylistsSongs = function(station_id, show_id, playlist_id){
+    // /stations/:station_id/users/:user_id/shows/:show_id/playlists/:playlist_id/songs(.:format)
+    $http.get(current_prefix + "/stations/" + station_id + '/users/' + current_user + '/shows/' + show_id + '/playlists/' + playlist_id + '/songs.json').success(function(data){
       console.log(data);
+      $scope.songs = data;
+    })
+  }
+
+  $scope.addSong = function(playlist_id){
+    // :playlist_id, :title, :artist, :album, :label, :genre, :time
+    console.log("---");
+    console.log($scope.new_title);
+    console.log($scope.new_artist);
+    console.log($scope.new_album);
+    console.log($scope.new_label);
+    console.log($scope.new_genre);
+    console.log($scope.new_time);
+    console.log("---");
+    data = {
+      playlist_id: playlist_id,
+      title: $scope.new_title,
+      artist: $scope.new_artist,
+      album: $scope.new_album,
+      label: $scope.new_label,
+      genre: $scope.new_genre,
+      time: $scope.new_time
+    };
+
+    $http.post(current_prefix + "/stations/" + station_id + '/users/' + current_user + '/shows/' + show_id + '/playlists/' + playlist_id + '/songs.json', data).success(function(data){
+      console.log(data);
+      $scope.getPlaylistsSongs(station_id, show_id, playlist_id);
     })
   }
 
@@ -71,6 +99,7 @@ myApp.controller('MyController', ['$scope', '$http', function MyController($scop
   $scope.init = function(){
     //$scope.getShows();
     $scope.testConnection();
+    $scope.getPlaylistsSongs(station_id, show_id, playlist_id);
   }
 
     $scope.init();

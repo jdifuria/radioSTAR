@@ -1,16 +1,16 @@
 <%= javascript_include_tag 'profile' %>
 <script type="text/javascript">
-  var user_id = <%= current_user.id %>;
+  var current_user = <%= current_user.id %>;
   var email = "<%= current_user.email %>";
   var password = "Radio789*";
+  var show_id = 1;
+  var playlist_id = 1;
+  var station_id = 1;
 </script>
 
 <body ng-app="myApp" ng-controller="MyController">
 
 <% if user_signed_in? %>
-  <div class="container-fluid">
-
-  </div>
   <div class="container ">
    <ul class="nav nav-tabs">
      <% @userShows.each do |x| %>
@@ -21,10 +21,55 @@
        <% end %>
      <% end %>
    </ul>
-   <%= render :partial => 'songs/form', :locals => {:song => @song, :playlist_id => 1} %>
+     <table>
+       <tr>
+         <td>
+           <label>Title</label></br>
+           <input type="text" ng-model="new_title">
+         </td>
+         <td>
+           <label>Artist</label></br>
+           <input type="text" ng-model="new_artist">
+         </td>
+         <td>
+           <label>Album</label></br>
+           <input type="text" ng-model="new_album">
+         </td>
+         <td>
+           <label>Label</label></br>
+           <input type="text" ng-model="new_label">
+         </td>
+         <td>
+           <label>Genre</label></br>
+           <input type="text" ng-model="new_genre">
+         </td>
+       </tr>
+     </table>
+     <button class="btn" ng-click="addSong(1)">Submit</button>
   </div>
-  <div class="container">
-    <table class="table table-hover table-sm">
+  <div class=" container container-fluid">
+    <table class="table table-striped">
+      <h4>Recently Played</h4>
+      <thead class="thead-inverse">
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Label</th>
+          <th>Genre</th>
+        </tr>
+        <tbody>
+            <tr ng-repeat="s in songs | orderBy:'-time'">
+              <td>{{s.title}}</td>
+              <td>{{s.artist}}</td>
+              <td>{{s.album}}</td>
+              <td>{{s.label}}</td>
+              <td>{{s.genre}}</td>
+            </tr>
+        </tbody>
+      </thead>
+    </table>
+    <!--<table class="table table-hover table-sm">
       <h4>Recently Played</h4>
       <thead class="thead-inverse">
         <tr>
@@ -47,7 +92,7 @@
           <% end %>
         </tbody>
       </thead>
-    </table>
+    </table>-->
   </div>
 <% else %>
   <%= yield %>
